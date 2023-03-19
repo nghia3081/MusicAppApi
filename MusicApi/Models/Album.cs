@@ -1,4 +1,6 @@
-﻿namespace MusicApi.Models
+﻿using Newtonsoft.Json;
+
+namespace MusicApi.Models
 {
     public partial class Album
     {
@@ -13,6 +15,7 @@
         public Guid? ArtistId { get; set; }
 
         public virtual Artist? Artist { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Song> Songs { get; set; }
     }
 }
